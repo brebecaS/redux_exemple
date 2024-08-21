@@ -1,6 +1,6 @@
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { decrementByOne } from "./counterSlice";
+import { incrementByOne } from "./counterSlice";
 
 function App() {
   // Selection sate from store
@@ -12,7 +12,7 @@ function App() {
       <button
         aria-label="Increment by one"
         onClick={() => {
-          dispatch(decrementByOne());
+          dispatch(incrementByOne());
         }}
       >
         Increment
