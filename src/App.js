@@ -1,6 +1,10 @@
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementByOne } from "./counterSlice";
+import {
+  decrementByOne,
+  incrementByOne,
+  incrementByValue,
+} from "./counterSlice";
 
 function App() {
   // Selection sate from store
@@ -17,8 +21,23 @@ function App() {
       >
         Increment
       </button>
-      <button aria-label="Decrement by one">Decrement</button>
-      <button aria-label="Increment by two"> Increment by 2</button>
+      <button
+        aria-label="Decrement by one"
+        onClick={() => {
+          dispatch(decrementByOne());
+        }}
+      >
+        Decrement
+      </button>
+      <button
+        aria-label="Increment by two"
+        onClick={() => {
+          dispatch(incrementByValue(2));
+        }}
+      >
+        {" "}
+        Increment by 2
+      </button>
       <h2>{counter}</h2>
     </div>
   );
